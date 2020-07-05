@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
   <meta charset="utf-8">
@@ -28,12 +28,49 @@
   <!-- Template Main CSS File -->
   <link href="css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-    Template Name: SoftLand
-    Template URL: https://bootstrapmade.com/softland-bootstrap-app-landing-page-template/
-    Author: BootstrapMade.com
-    Author URL: https://bootstrapmade.com/
-  ======================================================= -->
+  <style>
+    /* @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css); */
+
+fieldset, label { margin: 0; padding: 0; }
+
+/****** Style Star Rating Widget *****/
+
+.rating { 
+  border: none;
+  float: left;
+}
+
+.rating > input { display: none; } 
+.rating > label:before { 
+  margin: 5px;
+  font-size: 1.25em;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f005";
+}
+
+.rating > .half:before { 
+  content: "\f089";
+  position: absolute;
+}
+
+.rating > label { 
+  color: #ddd; 
+ float: right; 
+}
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+
+.rating > input:checked ~ label, /* show gold star when clicked */
+.rating:not(:checked) > label:hover, /* hover current star */
+.rating:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
+
+.rating > input:checked + label:hover, /* hover current star when changing rating */
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+.rating > input:checked ~ label:hover ~ label { color: #FFED85;  } 
+  </style>
+
 </head>
 
 <body>
@@ -62,18 +99,14 @@
             <nav class="site-navigation position-relative text-right" role="navigation">
 
               <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
-                <li class="active"><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="features.html" class="nav-link">Features</a></li>
-                <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+                <!-- <li class="active"><a href="index.html" class="nav-link">Kiss Marry Kill</a></li> -->
+                <li><a href="#nedir" class="nav-link">Nedir?</a></li>
+                <li><a href="#nasil" class="nav-link">Nasıl Kullanılır?</a></li>
 
-                <li class="has-children">
-                  <a href="blog.html" class="nav-link">Blog</a>
-                  <ul class="dropdown">
-                    <li><a href="blog.html" class="nav-link">Blog</a></li>
-                    <li><a href="blog-single.html" class="nav-link">Blog Sigle</a></li>
-                  </ul>
+                <li>
+                  <a href="#yorumlar" class="nav-link">Yorumlar</a>
                 </li>
-                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="#downloadApp" class="nav-link">Uygulamayı İndir</a></li>
               </ul>
             </nav>
           </div>
@@ -96,7 +129,6 @@
     <main id="main">
       <div class="hero-section">
         <div class="wave">
-
           <svg width="100%" height="355px" viewBox="0 0 1920 355" version="1.1" xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink">
             <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -107,7 +139,6 @@
               </g>
             </g>
           </svg>
-
         </div>
 
         <div class="container">
@@ -115,16 +146,32 @@
             <div class="col-12 hero-text-image">
               <div class="row">
                 <div class="col-lg-7 text-center text-lg-left">
-                  <h1 data-aos="fade-right">Dating App - Chat, Game, Match & Date</h1>
-                  <p class="mb-5" data-aos="fade-right" data-aos-delay="100">Social dating app
-                  <p data-aos="fade-right" data-aos-delay="200" data-aos-offset="-500"><a href="#"
-                      class="btn btn-outline-white">Get started</a></p>
+                  <h1 data-aos="fade-right">En Eğlenceli Flört Uygulaması </h1>
+                  <p class="mb-5" data-aos="fade-right" data-aos-delay="100">OYNA, EŞLEŞ, KONUŞ, BULUŞ
+                  <p data-aos="fade-right" data-aos-delay="200" data-aos-offset="-500">
+                    <!-- <a href="#"class="btn btn-outline-white">Get started</a> -->
+                    <!-- <p>Bizi Değerlendir: <fieldset class="rating">
+                      <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+                      <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+                      <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+                      <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+                      <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+                      <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+                      <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+                      <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+                      <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+                      <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                  </fieldset></p> -->
+                    
+                  </p>
                 </div>
-                <div class="col-lg-5 iphone-wrap" style="margin-top:-100px">
-				<iframe width="300" height="550" src="https://xd.adobe.com/embed/0e4a7b0b-2972-4e15-a6e5-bb2dacbbf263-5b19/?fullscreen&hints=off" frameborder="0" allowfullscreen></iframe>
+                <div class="col-lg-5 iphone-wrap" style="margin-top:-100px;">
+
+                  <iframe width="300" height="550" src="https://xd.adobe.com/embed/0e4a7b0b-2972-4e15-a6e5-bb2dacbbf263-5b19/?fullscreen&hints=off" frameborder="0" allowfullscreen></iframe>                 
+                  
                 <<!--  <img src="img/phone_1.gif" alt="Image" class="phone-1" data-aos="fade-right">
                   <img src="img/phone_2.gif" alt="Image" class="phone-2" data-aos="fade-right" data-aos-delay="200"> -->>
-                </div>
+                </div>                
               </div>
             </div>
           </div>
@@ -132,12 +179,12 @@
 
       </div>
 
-      <div class="site-section">
+      <div id="nedir" class="site-section">
         <div class="container">
 
           <div class="row justify-content-center text-center mb-5">
             <div class="col-md-5" data-aos="fade-up">
-              <h2 class="section-heading">Save your time to using SoftLand</h2>
+              <h2 class="section-heading">KISS MARRY KILL OYUNU NEDİR?</h2>
             </div>
           </div>
 
@@ -147,26 +194,26 @@
                 <div class="wrap-icon icon-1">
                   <span class="icon la la-users"></span>
                 </div>
-                <h3 class="mb-3">Explore Your Team</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem, optio.</p>
+                <!-- <h3 class="mb-3">UYGULAMADA KARŞINA ÇIKAN KİŞİLERİ “KISS-MARRY-KİLL” OLARAK DEĞERLENDİRDİĞİN,</h3> -->
+                <p>UYGULAMADA KARŞINA ÇIKAN KİŞİLERİ “KISS-MARRY-KILL” OLARAK DEĞERLENDİRDİĞİN,</p>
               </div>
             </div>
             <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
               <div class="feature-1 text-center">
                 <div class="wrap-icon icon-1">
-                  <span class="icon la la-toggle-off"></span>
+                  <span class="icon la la-heart"></span>
                 </div>
-                <h3 class="mb-3">Digital Whiteboard</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem, optio.</p>
+                <!-- <h3 class="mb-3">Digital Whiteboard</h3> -->
+                <p>SENİ AYNI ŞEKİLDE DEĞERLENDİREN KİŞİLERLE EŞLEŞTİĞİN,</p>
               </div>
             </div>
             <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
               <div class="feature-1 text-center">
                 <div class="wrap-icon icon-1">
-                  <span class="icon la la-umbrella"></span>
+                  <span class="icon la la-comment-dots"></span>
                 </div>
-                <h3 class="mb-3">Design To Development</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem, optio.</p>
+                <!-- <h3 class="mb-3">Design To Development</h3> -->
+                <p>EŞLEŞTİĞİN KULLANICILARLA KONUŞUP, TANIŞTIĞIN SOSYAL BİR OYUNDUR.</p>
               </div>
             </div>
           </div>
@@ -174,54 +221,65 @@
         </div>
       </div> <!-- .site-section -->
 
-      <div class="site-section">
+      <div id="nasil" class="row justify-content-center text-center mb-5">
+        <div class="col-md-5" data-aos="fade-up">
+          <h2 class="section-heading1">HAYDİ BAŞLAYALIM!</h2>
+        </div>
+      </div>
+
+      <div id="deneme1" class="site-section">
         <div class="container">
           <div class="row justify-content-center text-center mb-5" data-aos="fade">
-            <div class="col-md-6 mb-5">
-              <img src="img/undraw_svg_1.svg" alt="Image" class="img-fluid">
+            <div id="snapshots" class="col-md-6 mb-5">
+              <img src="img/kissSnap.png" alt="Image" class="img-fluid">
+              <img src="img/marrySnap.png" alt="Image" class="img-fluid">
+              <img src="img/killSnap.png" alt="Image" class="img-fluid">
+
             </div>
           </div>
 
           <div class="row">
             <div class="col-md-4">
               <div class="step">
-                <span class="number">01</span>
-                <h3>Sign Up</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem, optio.</p>
+                <span class="number1" style="font-size: 30px;">Kiss</span>
+                <h3></h3>
+                <p>“BURASI SICAK OLDU, ACABA BİZİM EVE Mİ GİTSEK?” DEDİĞİN KULLANICILAR İÇİN BUNU SEÇMELİSİN.</p>
               </div>
             </div>
             <div class="col-md-4">
               <div class="step">
-                <span class="number">02</span>
-                <h3>Create Profile</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem, optio.</p>
+                <span class="number2" style="font-size: 30px;">Marry</span>
+                <p> “ İŞTE TAM EVLENEBİLECEĞİM KİŞİ!” DİYORSAN VE GELECEĞİNİZİN OLACAĞINI DÜŞÜNÜYORSAN BUNU SEÇMELİSİN.</p>
               </div>
             </div>
             <div class="col-md-4">
               <div class="step">
-                <span class="number">03</span>
-                <h3>Enjoy the app</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem, optio.</p>
+                <span class="number3" style="font-size: 30px;">Kill</span>
+                <p>BEĞENMEDİĞİN HER KULLANICIYA "KILL" VERME ÖZGÜRLÜĞÜNE SAHİPSİN. "PEKİ YA HAYATININ AŞKIYSA?"</p>
               </div>
             </div>
           </div>
         </div>
       </div> <!-- .site-section -->
 
+      <div class="row justify-content-center text-center mb-5">
+        <div class="col-md-5" data-aos="fade-up">
+          <h2 class="section-heading2">İŞ GİTTİKÇE EĞLENCELİ OLMAYA BAŞLIYOR!</h2>
+        </div>
+      </div>
 
 
       <div class="site-section pb-0">
         <div class="container">
           <div class="row align-items-center">
             <div class="col-md-4 mr-auto">
-              <h2 class="mb-4">Seamlessly Communicate</h2>
-              <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur at reprehenderit optio,
-                laudantium eius quod, eum maxime molestiae porro omnis. Dolores aspernatur delectus impedit incidunt
-                dolore mollitia esse natus beatae.</p>
-              <p><a href="#">Download Now</a></p>
+              <h2 class="mb-4">TEBRİKLER EŞLEŞTİNİZ! PEKİ, NE KADAR UYUMLUSUNUZ?</h2>
+              <p class="mb-4"> Eşleştiğin kullanıcılarla ne kadar uyumlu olduğunu test edebileceksin! 
+                Chat ekranında olan test bölümüne tıklayınca karşına "Uyumluluk Testi" gelecek. 
+                Bu kısımda hangi kategoride eşleştiyseniz, karşınıza o kategorisinde sorular çıkacak. </p>
             </div>
             <div class="col-md-6" data-aos="fade-left">
-              <img src="img/undraw_svg_2.svg" alt="Image" class="img-fluid">
+              <img src="img/66.gif" alt="Image" class="img-fluid" style="height: 500px;">
             </div>
           </div>
         </div>
@@ -231,25 +289,74 @@
         <div class="container">
           <div class="row align-items-center">
             <div class="col-md-4 ml-auto order-2">
-              <h2 class="mb-4">Gather Feedback</h2>
-              <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur at reprehenderit optio,
-                laudantium eius quod, eum maxime molestiae porro omnis. Dolores aspernatur delectus impedit incidunt
-                dolore mollitia esse natus beatae.</p>
-              <p><a href="#">Download Now</a></p>
+              <h2 class="mb-4">EŞLEŞTİĞİN KİŞİLERLE TANIŞMAK DAHA KOLAY!</h2>
+              <p class="mb-4"> Eşleştiğin kişilerle “konuşmaya nereden başlasam” diye 
+                düşünüyorsan veya tanıştığın kişilerle daha eğlenceli vakit geçirmek istiyorsan doğru yerdesin. Bu oyunlar tam senlik!</p>
             </div>
             <div class="col-md-6" data-aos="fade-right">
-              <img src="img/undraw_svg_3.svg" alt="Image" class="img-fluid">
+              <img src="img/99.gif" alt="Image" class="img-fluid" style="height: 500px; width: 300px;">
+              <!-- <img src="img/99.gif" alt="Image" class="img-fluid" style="height: 500px; width: 300px;">
+              <img src="img/1010.gif" alt="Image" class="img-fluid" style="height: 500px; width: 300px;">
+              <img src="img/1111.gif" alt="Image" class="img-fluid" style="height: 500px; width: 300px;"> -->
+
             </div>
           </div>
         </div>
       </div> <!-- .site-section -->
 
 
-      <div class="site-section border-top border-bottom">
+      <div class="site-section pb-0">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-4 mr-auto">
+              <h2 class="mb-4">ARKADAŞLARINLA BİRBİRİNİZİ KIYASLAYIN</h2>
+              <p class="mb-4">Seçtiğin iki arkadaşınla grup oluştur. Kullanıcılar sizi oylasınlar. Bakalım kim evlenilecek, kim eğlenilecek birisiymiş?
+                 En çok “Kill” alan da üzülmesin. Eminiz başka bir seçenek olsaydı onu seçerlerdi. </p>
+            </div>
+            <div class="col-md-6" data-aos="fade-left">
+              <img src="img/55.gif" alt="Image" class="img-fluid" style="height: 500px;">
+            </div>
+          </div>
+        </div>
+      </div> <!-- .site-section -->
+
+      <div class="site-section">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-4 ml-auto order-2">
+              <h2 class="mb-4">SEN DE DİĞER GRUPLARI OYLAYABİLİRSİN </h2>
+              <p class="mb-4">Sen de oluşturduğun grup sayesinde diğer grupları oylayabileceksin. Sıkı tutun! Eşleşme durumunda 6 kişilik konuşmaya katılabileceksin.
+                 Konuşacak o kadar çok şey var ki… Bir şey değil :)</p>
+            </div>
+            <div class="col-md-6" data-aos="fade-right">
+              <img src="img/44.gif" alt="Image" class="img-fluid" style="height: 500px; width: 300px;">
+            </div>
+          </div>
+        </div>
+      </div> <!-- .site-section -->
+
+      <!-- <div class="site-section pb-0">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-4 mr-auto">
+              <h2 class="mb-4">Seamlessly Communicate</h2>
+              <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur at reprehenderit optio,
+                laudantium eius quod, eum maxime molestiae porro omnis. Dolores aspernatur delectus impedit incidunt
+                dolore mollitia esse natus beatae.</p>
+            </div>
+            <div class="col-md-6" data-aos="fade-left">
+              <img src="img/66.gif" alt="Image" class="img-fluid" style="height: 500px;">
+            </div>
+          </div>
+        </div>
+      </div>  -->
+
+
+      <div id="yorumlar" class="site-section border-top border-bottom">
         <div class="container">
           <div class="row justify-content-center text-center mb-5">
             <div class="col-md-4">
-              <h2 class="section-heading">Review From Our Users</h2>
+              <h2 class="section-heading">Prototipimizi Deneyenler</h2>
             </div>
           </div>
           <div class="row justify-content-center text-center">
@@ -261,13 +368,11 @@
                     <span class="icofont-star"></span>
                     <span class="icofont-star"></span>
                     <span class="icofont-star"></span>
-                    <span class="icofont-star muted"></span>
+                    <span class="icofont-star"></span>
                   </p>
-                  <h3>Excellent App!</h3>
+                  <h3>Mükemmel Uygulama!</h3>
                   <blockquote>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius ea delectus pariatur, numquam
-                      aperiam dolore nam optio dolorem facilis itaque voluptatum recusandae deleniti minus animi,
-                      provident voluptates consectetur maiores quos.</p>
+                    <p>Egomu test edebileceğim ve dışarıdan nasıl göründüğümü öğrenebileceğim bir uygulama.</p>
                   </blockquote>
 
 
@@ -275,7 +380,7 @@
                   <p class="review-user">
                     <img src="img/person_1.jpg" alt="Image" class="img-fluid rounded-circle mb-3">
                     <span class="d-block">
-                      <span class="text-black">Jean Doe</span>, &mdash; App User
+                      <span class="text-black">Merve</span>
                     </span>
                   </p>
 
@@ -289,11 +394,10 @@
                     <span class="icofont-star"></span>
                     <span class="icofont-star muted"></span>
                   </p>
-                  <h3>This App is easy to use!</h3>
+                  <h3>Çok keyifli!</h3>
                   <blockquote>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius ea delectus pariatur, numquam
-                      aperiam dolore nam optio dolorem facilis itaque voluptatum recusandae deleniti minus animi,
-                      provident voluptates consectetur maiores quos.</p>
+                    <p>Hem arkadaşlarımla hem de bireysel olarak keyifli vakit
+                       geçirebileceğimi düşündüğüm bir uygulama.</p>
                   </blockquote>
 
 
@@ -301,7 +405,7 @@
                   <p class="review-user">
                     <img src="img/person_2.jpg" alt="Image" class="img-fluid rounded-circle mb-3">
                     <span class="d-block">
-                      <span class="text-black">Johan Smith</span>, &mdash; App User
+                      <span class="text-black">Samet</span>
                     </span>
                   </p>
 
@@ -314,13 +418,11 @@
                     <span class="icofont-star"></span>
                     <span class="icofont-star"></span>
                     <span class="icofont-star"></span>
-                    <span class="icofont-star muted"></span>
+                    <span class="icofont-star"></span>
                   </p>
-                  <h3>Awesome functionality!</h3>
+                  <h3>Oyunlar çok eğlenceli!</h3>
                   <blockquote>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius ea delectus pariatur, numquam
-                      aperiam dolore nam optio dolorem facilis itaque voluptatum recusandae deleniti minus animi,
-                      provident voluptates consectetur maiores quos.</p>
+                    <p>Chat ekranındaki oyunlar çok eğlenceli ve yeni biriyle tanışmayı daha kolay bir hale getirmiş.</p>
                   </blockquote>
 
 
@@ -328,7 +430,7 @@
                   <p class="review-user">
                     <img src="img/person_3.jpg" alt="Image" class="img-fluid rounded-circle mb-3">
                     <span class="d-block">
-                      <span class="text-black">Jean Thunberg</span>, &mdash; App User
+                      <span class="text-black">Zeynep</span>
                     </span>
                   </p>
 
@@ -339,13 +441,11 @@
         </div>
       </div>
 
-
-
-      <div class="site-section cta-section">
+      <div id="downloadApp" class="site-section cta-section">
         <div class="container">
           <div class="row align-items-center">
             <div class="col-md-6 mr-auto text-center text-md-left mb-5 mb-md-0">
-              <h2>Starts Publishing Your Apps</h2>
+              <h2>Çok yakında</h2>
             </div>
             <div class="col-md-5 text-center text-md-right">
               <p><a href="#" class="btn"><span class="icofont-brand-apple mr-3"></span>App store</a> <a href="#"
@@ -357,7 +457,7 @@
 
 
     </main>
-    <footer class="footer" role="contentinfo">
+    <!-- <footer  class="footer" role="contentinfo">
       <div class="container">
         <div class="row">
           <div class="col-md-4 mb-4 mb-md-0">
@@ -406,19 +506,13 @@
           <div class="col-md-7">
             <p class="copyright">&copy; Copyright SoftLand. All Rights Reserved</p>
             <div class="credits">
-              <!--
-                All the links in the footer should remain intact.
-                You can delete the links only if you purchased the pro version.
-                Licensing information: https://bootstrapmade.com/license/
-                Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=SoftLand
-              -->
               Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
             </div>
           </div>
         </div>
 
       </div>
-    </footer>
+    </footer> -->
   </div> <!-- .site-wrap -->
 
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
